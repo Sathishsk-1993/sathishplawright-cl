@@ -198,11 +198,5 @@ await expect(frame.locator('#trash li h5')).toHaveText(["High Tatras 2","High Ta
 
 
     })
-    test.only ('simplerun',async ({page})=>{
-        const pm = new PageManger(page)
-        await pm.navigateto().formlayoitpage()
-        await pm.onformlayoutpage().submitusingbygridwithcredentialsandsubmit('test@test.com','test007','Option 2')
-        await pm.onformlayoutpage().submitinformbyusingdrid('john smith','test@gmail.com',true)
-
-    })
+    
 
