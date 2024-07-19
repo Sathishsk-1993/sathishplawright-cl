@@ -25,4 +25,12 @@ const pm = new PageManger(page)
 
     })
 
+    test.only ('testing with ci',async({page})=> {
+    const pm = new PageManger(page)
+       
+       await pm.navigateto().formlayoitpage()
+       await pm.navigateto().datepicker()
+       await pm.navigateto().smarttable()
+    
+        })
    
