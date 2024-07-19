@@ -9,7 +9,7 @@ export default defineConfig<Testoptions>({
   timeout:70000,
   //globalTimeout:60000,
   expect:{
-    timeout: 120000,
+    timeout: 120 * 1000,
   },
   
   retries:1,
