@@ -18,7 +18,7 @@ const pm = new PageManger(page)
 
     })
 
-    test ('parameterized',async ({page})=>{
+    test .only('parameterized',async ({page})=>{
         const pm = new PageManger(page)
         await pm.navigateto().formlayoitpage()
         await pm.onformlayoutpage().submitusingbygridwithcredentialsandsubmit('test@test.com','test007','Option 2')
@@ -26,7 +26,7 @@ const pm = new PageManger(page)
 
     })
 
-    test.only ('testing with ci',async({page})=> {
+    test ('testing with ci',async({page})=> {
     const pm = new PageManger(page)
     
        
