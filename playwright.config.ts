@@ -7,7 +7,7 @@ import type { Testoptions } from './test-options'
 
 export default defineConfig<Testoptions>({
   timeout:100000,
-  //globalTimeout:60000,
+  globalTimeout:60000,
   expect:{
     timeout:60000
   },
