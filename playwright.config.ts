@@ -79,13 +79,32 @@ module.exports = defineConfig({
   // Other Playwright configurations
   timeout: 30000, // Timeout for individual tests
   retries: 2, // Number of retries for failed tests
+  reporter: [
+    // Use "dot" reporter on CI, "list" otherwise (Playwright default).
+    process.env.CI ? ["dot"] : ["list"],
+    // Add Argos reporter.
+    [
+      "@argos-ci/playwright/reporter",
+      {
+        // Upload to Argos on CI only.
+        uploadToArgos: !!process.env.CI,
+
+        
+      },
+    ],
+  ],
+
+
+  
 
   use: {
     headless: true, // Run tests in headless mode
     viewport: { width: 1280, height: 720 }, // Default viewport size
     ignoreHTTPSErrors: true, // Ignore HTTPS errors
-  },
-
+  
+  trace: 'on-first-retry',
+  screenshot: "only-on-failure",
+},
   // Project-specific settings
   projects: [
     {
