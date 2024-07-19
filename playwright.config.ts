@@ -14,6 +14,17 @@ export default defineConfig<Testoptions>({
   
   retries:1,
   reporter: [
+    process.env.CI ? ["dot"] : ["list"],
+    [
+      "@argos-ci/playwright/reporter",
+      {
+        // Upload to Argos on CI only.
+        uploadToArgos: !!process.env.CI,
+
+      
+      },
+    ],
+  
   //['allure-playwright'],
   ['html'],
  
@@ -25,7 +36,8 @@ export default defineConfig<Testoptions>({
     
    
     trace: 'on-first-retry',
-    video : 'on'
+    screenshot: "only-on-failure",
+    video : 'off'
   },
 
   projects: [

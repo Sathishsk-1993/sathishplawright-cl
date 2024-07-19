@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test'
 import { PageManger } from './Page-Objects/pagemanger'
+import { argosScreenshot } from "@argos-ci/playwright";
 
 
 test.beforeEach(async({page}) => {
@@ -29,8 +30,10 @@ const pm = new PageManger(page)
     const pm = new PageManger(page)
        
        await pm.navigateto().formlayoitpage()
+       await argosScreenshot(page, "formlayoitpage");
        await pm.navigateto().datepicker()
+       await argosScreenshot(page, "datepicker");
        await pm.navigateto().smarttable()
-    
+       await argosScreenshot(page, "smarttable");
         })
    
