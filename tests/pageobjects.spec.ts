@@ -4,7 +4,7 @@ import { argosScreenshot } from "@argos-ci/playwright";
 
 
 test.beforeEach(async({page}) => {
-    await page.goto("/")
+    await page.goto("http://localhost:4200/")
     })
 
     test ('navigate to forms page',async({page})=>
@@ -18,7 +18,7 @@ const pm = new PageManger(page)
 
     })
 
-    test .only('parameterized',async ({page})=>{
+    test ('parameterized',async ({page})=>{
         const pm = new PageManger(page)
         await pm.navigateto().formlayoitpage()
         await pm.onformlayoutpage().submitusingbygridwithcredentialsandsubmit('test@test.com','test007','Option 2')
@@ -26,7 +26,7 @@ const pm = new PageManger(page)
 
     })
 
-    test ('testing with ci',async({page})=> {
+    test.only ('testing with ci',async({page})=> {
     const pm = new PageManger(page)
     
        
