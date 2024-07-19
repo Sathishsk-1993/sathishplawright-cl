@@ -4,6 +4,18 @@ import type { Testoptions } from './test-options'
 
  require('dotenv').config();
 
+ const config = {
+  webServer: {
+    command: 'npm start',
+    url: 'http://localhost:4200',
+    timeout: 120000, // increase timeout to 2 minutes (120000ms)
+    reuseExistingServer: !process.env.CI
+  },
+  // other configurations
+};
+
+module.exports = config;
+
 
 export default defineConfig<Testoptions>({
   timeout:70000,
@@ -33,6 +45,7 @@ export default defineConfig<Testoptions>({
    
     baseURL: 'http://localhost:4200/',
     GlobalsQa: 'https://www.globalsqa.com/demo-site/draganddrop/',
+   
     
    
     trace: 'on-first-retry',
