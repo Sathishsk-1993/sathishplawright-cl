@@ -28,10 +28,11 @@ const pm = new PageManger(page)
 
     test.only ('testing with ci',async({page})=> {
     const pm = new PageManger(page)
-    
+
        
        await pm.navigateto().formlayoitpage()
        await argosScreenshot(page, "formlayoitpage");
+       
        await pm.navigateto().datepicker()
        await argosScreenshot(page, "datepicker");
        await pm.navigateto().smarttable()
