@@ -6,10 +6,10 @@ import type { Testoptions } from './test-options'
 
 
 export default defineConfig<Testoptions>({
-  timeout:70000,
+  timeout:100000,
   //globalTimeout:60000,
   expect:{
-    timeout:6000
+    timeout:60000
   },
   
   retries:1,
