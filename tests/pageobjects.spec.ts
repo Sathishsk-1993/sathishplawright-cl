@@ -28,6 +28,7 @@ const pm = new PageManger(page)
 
     test.only ('testing with ci',async({page})=> {
     const pm = new PageManger(page)
+    
        
        await pm.navigateto().formlayoitpage()
        await argosScreenshot(page, "formlayoitpage");
